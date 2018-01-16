@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>What's poppin?</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-8" align="middle">What's happening in my location?</h1>
+    <br>
+    <nav class="navbar navbar-light bg-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <form class="form-inline">
+        <input class="form-control mr-sm-3" type="search" placeholder="Please enter your location. City, State, or Zip Code" style="width:500px;" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+  </div>
+</div>
+<div id="map"></div>
+<script>
+function initMap(){
+// map options
+var options = {
+zoom:11,
+center:{lat:34.0635,lng:-118.4455}
+}
+// New Map
+var map = new google.maps.Map(document.getElementById('map'), options);
+
+//Add Marker
+//var marker = new google.maps.Marker({
+  //position:{lat:34.0259,lng:-118.7798}
+  //map:map
+//});
+}
+</script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDEMLaIn9zuwgHOR4Ld10ab8yLV8sIWU&callback=initMap">
+    </script>
+
+    <!-- <div class="pos-f-t">
+  <div class="collapse" id="navbarToggler">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/employee.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+.form-inline{
+  font-size: 12pt;
+  margin: 0 auto;
+}
+
+#map{
+  height:350px;
+  width:60%;
+  float:right;
+}

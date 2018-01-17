@@ -1,3 +1,4 @@
+
 var sportsRadarAPIKey = 'gk5zjt3sktfagphmb5z3q785';
 var dateFormat = 'MM-DD-YYYY';
 var dateRange = 15;

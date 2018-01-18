@@ -3,8 +3,73 @@
   margin: 0 auto;
 }
 
-#map{
+#map-div{
   height:350px;
-  width:60%;
-  float:right;
+  /*width:60%;*/
+  /*float:right;*/
+  margin-right: 6px;
+}
+
+#weather-div{
+  height:350px;
+  /*width:39%;*/
+  /*float:left;*/
+  border: solid;
+  border-color: #000000;
+  font-size: 16pt;
+  margin-left: 6px;
+
+}
+
+#sports-div{
+  height:200px;
+  width:99%;
+  float:left;
+  border: solid;
+  border-color: #000000;
+  font-size: 16pt;
+  margin-top:20px;
+  margin-left: 6px;
+}
+
+#places-div{
+  height:200px;
+  width:99%;
+  /*float:left;*/
+  border: solid;
+  border-color: #000000;
+  font-size: 16pt;
+  margin-top:20px;
+  margin-left: 6px;
+
+}
+
+.content-card {
+
+  background-color: grey;
+}
+
+.large {
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: bold;
+
+}
+
+.small {
+font-size: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
 }

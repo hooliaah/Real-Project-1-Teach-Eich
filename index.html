@@ -3,15 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>What's poppin?</title>
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- materialized link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="javascript/sports.js"></script>
+   
   </head>
 
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <nav>
+    <div class="nav-header">
+      <a href="#" class="title valign center-block" style="color:#7FC3EB">Poppin.<a>
+    </div>
+    </nav>
+    <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" placeholder="Search desired location here." type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons"></i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+  <br>
+    <!-- <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-8" align="middle">What's poppin' in my location?</h1>
+    <h1 class="display-8" align="middle">What's poppin'?</h1>
     <br>
     <nav class="navbar navbar-light bg-fluid">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +50,56 @@
       </form>
     </nav>
   </div>
+
+</div> -->
+
+<!-- <div class="container">
+
+<div class="row">
+<div class="col s12 l6"> -->
+<div class="row">
+      <div class="col s12 l6">
+        <div class="card-panel">
+          <div class="content-card" id="weather-div" align="center" style= "color:#7FC3EB"><br>Weather</div>
+          </span>
+        </div>
+      </div>
+
+<!-- <div class= "row"> -->
+<!-- <div class="col s12 l6"> -->
+
+<div class="col s12 l6">
+  <div class="card-panel">
+      <div class="content-card" id="map-div"></div>
+    </span>
+  </div>
 </div>
+</div>
+
+
+<div class="row">
+  <div class="col s12 l12">
+    <div class="card-panel">
+<!-- <div class= "col s12 l12"> -->
+        <div class="content-card" id="sports-div" align="center" style="color:#7FC3EB"><br>Sports Headlines</div>
+    </span>
+  </div>
+</div>
+</div>
+
+<!-- </div>
+</div> -->
+
+<!-- <div class="row">
+<div class="col l12 s12"> -->
+<div class="row">
+  <div class="col s12 l12">
+    <div class="card-panel">
+<div class="content-card" id="places-div" align="center" style="color:#7FC3EB"><br>Restaurants</div>
+</span>
+</div>
+</div>
+
 <!-- <div class="container"> -->
 <div id="weather" align="center"><br>Weather</div>
 <div id="map"></div>
@@ -31,9 +107,35 @@
 <div id="otherStuff" align="center"><br>Other Stuff</div>
 <!-- </div> -->
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDEMLaIn9zuwgHOR4Ld10ab8yLV8sIWU&callback=initMap">
-    </script>
+</div>
+
+<!-- </div>
+</div>
+</div> -->
+
+
+<script>
+function initMap(){
+// map options
+var options = {
+zoom:11,
+center:{lat:34.0635,lng:-118.4455}
+}
+// New Map
+var map = new google.maps.Map(document.getElementById('map-div'), options);
+
+//Add Marker
+//==var marker = new google.maps.Marker({
+  //position:{lat:34.0259,lng:-118.7798}
+  //map:map
+//});
+}
+</script>
+
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDEMLaIn9zuwgHOR4Ld10ab8yLV8sIWU&callback=initMap">
+</script>
 
     <!-- <div class="pos-f-t">
   <div class="collapse" id="navbarToggler">
@@ -44,7 +146,12 @@
   </div> -->
 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="assets/map.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="javascript/yelp.js"></script>
+
   </body>
 </html>

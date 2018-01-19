@@ -1,11 +1,24 @@
 Body {
   /*background-color: white;*/
-  background: linear-gradient(to top, #ffcc66 22%, #ffffff 113%);
+  background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
+}
+
+a {
+  font-size: 32pt;
+  text-align: center;
+  /*color: #FF9A6E;*/
+  font-family: "ubuntu";
+  font-weight: bold;
+  background: linear-gradient(to top, #ffffff 22%, #ffffff 90%);
+
+}
+nav .nav-header {
+  background-color: #ffffff;
 }
 nav .nav-wrapper {
   height:200px;
   line-height: 200px;
-  background-color: orange;
+  background-color: #FF9A6E;
 }
 .form-inline{
   font-size: 12pt;

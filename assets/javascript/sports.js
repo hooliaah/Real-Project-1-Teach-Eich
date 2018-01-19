@@ -18,7 +18,6 @@ function getSports (state,sports) {
     if (sports = 'NHL') {
         getNHL(state);
     }   
-    console.log("getSports() SPORTS, STATE , RESULTS ", sports, state, display)
 }
 
 function getNFL (state) {
@@ -32,6 +31,7 @@ function getNFL (state) {
   setTimeout(function(){
     var matchedGameStates = matchGameStates(state);
     console.log('display ', display);
+    
     return matchedGameStates;
   },3000)
 
@@ -47,36 +47,28 @@ function getNHL (state) {
 
 
 function getTeamHierarchy () {
-  console.log('enter getTeamHiearchy()');
   var teamsInfo = [];
   var url = 'http://api.sportradar.us/nfl-ot2/league/hierarchy.json' + '?api_key=' + sportsRadarAPIKey;
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       // iterates through conferences
       for (i=0; i < data.conferences.length; i++) {
-        console.log("Enter conferences ", data.conferences.length);
         // iterates through divisions
         for (j=0; j < data.conferences[i].divisions.length; j++) {
-          console.log("Enter divisions ", data.conferences[i].divisions.length);    
           // iterates through teams
           for (k=0; k < data.conferences[i].divisions[j].teams.length; k++) {
-            console.log("Enter teams ", data.conferences[i].divisions[j].teams.length);
             var teamID = data.conferences[i].divisions[j].teams[k].id;
             var teamCity = data.conferences[i].divisions[j].teams[k].venue.city;
             var teamState = data.conferences[i].divisions[j].teams[k].venue.state;
-            console.log(teamID, teamCity, teamState);
             teamsInfo.push ({
               'teamID': teamID,
               'teamCity': teamCity,
               'teamState': teamState
               });
-            // console.log("teamsInfo[]", teamsInfo)
           }
         }
       }
-      console.log("teamsInfo[]", teamsInfo)
       teamInfo = teamsInfo;
     });
 }
@@ -89,18 +81,12 @@ function getNFLSchedule (city,st) {
         method: "GET"
       })
       .then(function(response) {
-        console.log("Schedule Data");
-        console.log(response);
         var numWeeks = response.weeks.length;
-        console.log("Weeks",numWeeks);
         // iterates through the weeks in the season
         for (i=0; i < numWeeks; i++) {
-            console.log("i",i);
             var games = response.weeks[i].games;
-            console.log('games',games);
             // iterates through the games in the week
             for (j=0; j < games.length; j++) {
-                console.log("j",j);
                 var game = games[j];
                 var date = convertDate(game.scheduled);
                 // checks if the game is within the date range
@@ -140,14 +126,12 @@ function getNFLSchedule (city,st) {
                 }
             }
         }
-        console.log("allGames",allGames);
       });
     // },1000)
     
 };
 
 function lookupTeamInfo (array, key, value) {
-  console.log('enter lookupTeamInfo () ', array, key, value);
   for (var i = 0; i < array.length; i++) {
       if (array[i][key] === value) {
           return array[i];
@@ -157,7 +141,6 @@ function lookupTeamInfo (array, key, value) {
 }
 
 function matchGameStates(state) {
-    console.log('enter matchGameStates() ', state);
     var matchingResults = [];
     // parse allGames[] for matching home or away team state
     for (var i = 0; i < allGames.length; i++) {
@@ -169,9 +152,9 @@ function matchGameStates(state) {
     // parse matchingResults[] and format 
                 
         }
-    console.log('finished matching result is ',matchingResults)
     if (matchingResults.length > 0) {
         display.push(formatResponse(matchingResults));
+        
     } else return 'no results';
 }
 
@@ -203,6 +186,17 @@ function formatResponse(input) {
             'venue': input[i].venue
             });
     }
+    console.log(responseFormat);
+    $('#sports').append('NFL' + '<br>');
+    for (i=0; i<responseFormat.length; i++) {
+        $('#sports').append(responseFormat[i].date + ' ');
+        $('#sports').append(responseFormat[i].venue + ' ');
+        $('#sports').append(responseFormat[i].winTeam + ' ');
+        $('#sports').append(responseFormat[i].winScore + ' ');
+        $('#sports').append(responseFormat[i].looseTeam + ' ');
+        $('#sports').append(responseFormat[i].looseScore + ' <br>');
+    }
+    
     return responseFormat;
     
 }
@@ -215,16 +209,12 @@ function checkDate(date) {
     // if the date is between the dateRange returns true, otherwise false
     var upperRange = moment().add(dateRange, 'days').format(dateFormat);
     var lowerRange = moment().subtract(dateRange, 'days').format(dateFormat);
-    console.log(date, upperRange, lowerRange);
     if (date > upperRange) {
-        console.log("above range");
         return false;
     } else if (date < lowerRange) {
-        console.log("below range");
         return false;
 
     } else {
-      console.log("in range");
       return true
     }; 
 }

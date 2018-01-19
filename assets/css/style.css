@@ -1,3 +1,4 @@
+
 Body {
   /*background-color: white;*/
   background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
@@ -20,6 +21,7 @@ nav .nav-wrapper {
   line-height: 200px;
   background-color: #FF9A6E;
 }
+
 .form-inline{
   font-size: 12pt;
   margin: 0 auto;
@@ -31,6 +33,7 @@ nav .nav-wrapper {
   /*float:right;*/
   margin-right: 6px;
   /*border-style: solid;*/
+
 }
 
 #weather-div{
@@ -68,8 +71,7 @@ nav .nav-wrapper {
 }
 
 .content-card {
-
-
+  background-color: grey;
 }
 
 .large {

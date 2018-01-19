@@ -15,7 +15,6 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script src="javascript/sports.js"></script>
    
   </head>
 
@@ -102,51 +101,15 @@
 </div>
 
 <!-- <div class="container"> -->
-<div id="weather" align="center"><br>Weather</div>
+<!-- <div id="weather" align="center"><br>Weather</div>
 <div id="map"></div>
 <div id="sports" align="center"><br>Sports Headlines</div>
-<div id="otherStuff" align="center"><br>Other Stuff</div>
+<div id="otherStuff" align="center"><br>Other Stuff</div> -->
 <!-- </div> -->
 
 </div>
 
-<!-- </div>
-</div>
-</div> -->
-
-
-<script>
-function initMap(){
-// map options
-var options = {
-zoom:11,
-center:{lat:34.0635,lng:-118.4455}
-}
-// New Map
-var map = new google.maps.Map(document.getElementById('map-div'), options);
-
-//Add Marker
-//==var marker = new google.maps.Marker({
-  //position:{lat:34.0259,lng:-118.7798}
-  //map:map
-//});
-}
-</script>
-
-
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDEMLaIn9zuwgHOR4Ld10ab8yLV8sIWU&callback=initMap">
-</script>
-
-    <!-- <div class="pos-f-t">
-  <div class="collapse" id="navbarToggler">
-    <div class="bg-dark p-4">
-      <h4 class="text-white">Collapsed content</h4>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
-    </div>
-  </div> -->
-
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByBWhXulCPr2mjC2po6lufTVuHD9QmeU0&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="assets/javascript/map.js"></script>

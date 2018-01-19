@@ -1,3 +1,27 @@
+
+Body {
+  /*background-color: white;*/
+  background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
+}
+
+a {
+  font-size: 32pt;
+  text-align: center;
+  /*color: #FF9A6E;*/
+  font-family: "ubuntu";
+  font-weight: bold;
+  background: linear-gradient(to top, #ffffff 22%, #ffffff 90%);
+
+}
+nav .nav-header {
+  background-color: #ffffff;
+}
+nav .nav-wrapper {
+  height:200px;
+  line-height: 200px;
+  background-color: #FF9A6E;
+}
+
 .form-inline{
   font-size: 12pt;
   margin: 0 auto;
@@ -8,14 +32,16 @@
   /*width:60%;*/
   /*float:right;*/
   margin-right: 6px;
+  /*border-style: solid;*/
+
 }
 
 #weather-div{
   height:350px;
   /*width:39%;*/
   /*float:left;*/
-  border: solid;
-  border-color: #000000;
+  /*border: solid;
+  border-color: #000000;*/
   font-size: 16pt;
   margin-left: 6px;
 
@@ -24,9 +50,9 @@
 #sports-div{
   height:200px;
   width:99%;
-  float:left;
-  border: solid;
-  border-color: #000000;
+  /*float:left;*/
+  /*border: solid;
+  border-color: #000000;*/
   font-size: 16pt;
   margin-top:20px;
   margin-left: 6px;
@@ -36,8 +62,8 @@
   height:200px;
   width:99%;
   /*float:left;*/
-  border: solid;
-  border-color: #000000;
+  /*border: solid;
+  border-color: #000000;*/
   font-size: 16pt;
   margin-top:20px;
   margin-left: 6px;
@@ -45,7 +71,6 @@
 }
 
 .content-card {
-
   background-color: grey;
 }
 

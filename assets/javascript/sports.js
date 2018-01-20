@@ -21,6 +21,22 @@ function pushToDiv (data) {
     if (data.length < 5) {
         dataLength = data.length;
     }
+    var tableElement = $('<table>');
+    var colgroupElement = $('<colgroup>');
+    var colElement = $('<col>');
+    var tbodyElement = $('<tbody id="sports-rows">');
+
+    for (i=1; i < 4; i++) {
+        let colElement = $("<col id='sports-news-col" + i + "'>");
+        console.log("colID ", colElement);
+        colgroupElement.append(colElement);
+    }
+
+    tableElement.append(colgroupElement);
+    tableElement.append(tbodyElement);
+
+    $('#sports-div').append(tableElement);
+
     for (i=0; i < dataLength; i++) {
         var tableImageSource = data[i].urlToImage;
         var tableURL = data[i].url;
@@ -45,6 +61,7 @@ function pushToDiv (data) {
         tableDataSource.text(tableSource);
     
         tableRow.append(tableDataImage,tableDataHeadline,tableDataSource);
-        $('#sports-div').append(tableRow.clone(true, true));
+
+        $('#sports-rows').append(tableRow.clone(true, true));
     }
 }

@@ -7,4 +7,39 @@
   height:350px;
   width:60%;
   float:right;
+  margin-right: 6px;
+}
+
+#weather{
+  height:350px;
+  width:39%;
+  float:left;
+  border: solid;
+  border-color: #000000;
+  font-size: 16pt;
+  margin-left: 6px;
+
+}
+
+#sports{
+  height:200px;
+  width:99%;
+  float:left;
+  border: solid;
+  border-color: #000000;
+  font-size: 16pt;
+  margin-top:20px;
+  margin-left: 6px;
+}
+
+#otherStuff{
+  height:200px;
+  width:99%;
+  float:left;
+  border: solid;
+  border-color: #000000;
+  font-size: 16pt;
+  margin-top:20px;
+  margin-left: 6px;
+
 }

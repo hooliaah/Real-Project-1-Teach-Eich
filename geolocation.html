@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head runat="server">
+    <title>Geolocation</title>
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDEMLaIn9zuwgHOR4Ld10ab8yLV8sIWU">
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="message"></div>
+	<div id="message2"></div>
+	<div id="position"></div>
+	<div class="variableCheck"></div>
+	<div id="map" style="border: 4px solid red; height: 300px; width: 300px"></div>
+<script type="text/javascript">
+
+ $(document).ready(function () {
+
+				var share = {
+					city: null,
+					state: null,
+					zipCode: null
+				}
+
+        var message = $("#message");
+        var position = $("#position");
+
+            if (window.navigator.geolocation) {
+                message.html("locating");
+                var geolocation = window.navigator.geolocation;
+                var options = { enableHighAccuracy: true}
+                geolocation.getCurrentPosition(onComplete, onFail, options);             }
+            else {
+                message.html("No support");
+            }
+
+        function onComplete(geoPosition) {
+            $("#position").append("<p> Latitude" + geoPosition.coords.latitude + "</p>");
+            $("#position").append("<p> Longitude" + geoPosition.coords.longitude + "</p>");
+            Initializemap(geoPosition.coords.latitude, geoPosition.coords.longitude);
+
+console.log(geoPosition.coords.latitude);
+console.log(geoPosition.coords.longitude);
+
+				var joinLatlng = geoPosition.coords.latitude + "," + geoPosition.coords.longitude;
+
+console.log(joinLatlng, 'combined');
+
+				var apiKey6 = "AIzaSyCwTpsZtuW6qLwi284aui3cYMq6mAzNydI";
+				var query6URL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + joinLatlng + "&key=" + apiKey6;
+
+console.log(query6URL);
+
+			$.ajax({
+				url: query6URL,
+				method: "GET"
+			})
+			.done(function(response){
+
+				var city = response.results[0].address_components[2].short_name;
+				var state = response.results[0].address_components[4].short_name;
+				var zipCode = response.results[0].address_components[6].short_name;
+
+				$("#message").html("<p>City location : " + city + "</p>");
+				$("#message2").html("<div><p>" + state + " : " + zipCode + "</p></div>");
+
+				share.city = city;
+				share.state = state;
+				share.zipCode = zipCode;
+
+console.log(share.city, 'inside function');
+console.log(share, 'inside function');
+			})
+}//end of onComplete function
+
+        function onFail() {
+            alert("Failed ");
+        }
+
+        function Initializemap(latitude, longitude) {
+            var Latlng = new google.maps.LatLng(latitude, longitude);
+            var options = {zoom: 18, center: Latlng, mapTypeId: google.maps.MapTypeId.ROADMAP };
+            var map = new google.maps.Map(document.getElementById("map"),options);
+        }
+			});//jQuery function closing
+</script>
+</body>
+</html>

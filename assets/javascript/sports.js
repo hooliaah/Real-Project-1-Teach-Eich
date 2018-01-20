@@ -61,6 +61,7 @@ function pushToDiv (data) {
     $(tableRow).append(tableDataImage,tableDataHeadline,tableDataSource);
 
     $('#sports-div').append(tableRow);
+    
 
     
 // document.write("<table border=1>")

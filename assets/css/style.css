@@ -37,8 +37,8 @@ nav .nav-header {
   background-color: #ffffff;
 }
 nav .nav-wrapper {
-  height:200px;
-  line-height: 200px;
+  height:75px;
+  /* line-height: 200px; */
   background-color: #FF9A6E;
 }
 
@@ -69,13 +69,13 @@ nav .nav-wrapper {
   /*border: solid;
   border-color: #000000;*/
   font-size: 12pt;
-  margin-left: 6px;
+  /* margin-left: 6px; */
 
 }
 
 #sports-div{
   height:auto;
-  width:99%;
+  /* width:99%; */
   font-color: white;
   /* font-size: 12pt; */
   /* margin-left: 6px; */
@@ -85,19 +85,20 @@ nav .nav-wrapper {
 
 #places-div{
   height:200px;
-  width:99%;
+  /* width:99%; */
   /*float:left;*/
   /*border: solid;
   border-color: #000000;*/
   font-size: 12pt;
-  margin-top:20px;
-  margin-left: 6px;
+  /* margin-top:20px; */
+  /* margin-left: 6px; */
 
 }
 
 .card-panel {
-  margin: 24px;
+  margin: 12px;
   padding: 12px;
+  color:#7FC3EB;
 }
 
 .content-card {

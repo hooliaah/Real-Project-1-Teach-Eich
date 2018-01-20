@@ -59,6 +59,7 @@
                         .done(function (response) {
 
                             console.log(response);
+                            
 
                             var city = response.results[0].address_components[2].short_name;
                             var state = response.results[0].address_components[4].short_name;

@@ -5,7 +5,7 @@ $(document).ready(function () {
     var apiKey = '_Gh7Iho7AsJ3k27QFmYght2x83vh2Q3YbAf1g6tYV4BLoivTseswFHtLiln5Fm5AqdLkMXNSgXT8ZW3vJWPZppsoHD12wvhblZg15hUFih97xOcL6DmeQ1BLsMFaWnYx';
     // the cors proxy to enable Yelp API requests
     // this proxy is running on my personal server... please do not share this with others
-    var proxy = 'https://proxy.bhsplex.com/'
+    var proxy = 'https://fathomless-lake-71727.herokuapp.com/' 
     // yelp search api
     var url = 'https://api.yelp.com/v3/businesses/search';
     // query parameters
@@ -38,7 +38,7 @@ $(document).ready(function () {
                 var newDiv = $('<div>');
                 var p = $('<p>').text('Restaurant name: '+ results[i].name + ' Rating: ' + results[i].rating);
                 newDiv.append(p);
-                $('#yelp-info-div').append(newDiv);
+                $('#places-div').append(newDiv);
             }
 
         })

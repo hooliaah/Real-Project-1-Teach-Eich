@@ -14,7 +14,7 @@ $("#search").on("change keyup", function() {
       $("#lon").val(loc.lng)
       console.log(loc.lat);
       console.log(loc.lng);
-
+console.log(loc, 'the actual value');
 initializeMap();
     }
   })

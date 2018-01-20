@@ -1,13 +1,13 @@
 #sports-news-table {
     /* font: larger sans-serif; */
     table-layout: fixed;
-    width: 90%;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 100%;
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
 }
 
 #sports-news-col1 {
-    width:10%;
+    width: 100px;
 }
 
 #sports-news-col2 {
@@ -21,7 +21,7 @@
 .sports-news-image, .sports-news-headline, .sports-news-source {
     max-width: 100%;
     max-height: 50px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 
 .sports-news-image img {
@@ -29,5 +29,7 @@
     margin-left: auto;
     margin-right: auto;
     width:100%;
+    min-width: 100px;
+    height: auto;
     max-height:auto;
 }

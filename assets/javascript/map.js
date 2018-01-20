@@ -20,6 +20,7 @@ $("#search").on("change keyup", function() {
       console.log(loc.lng);
 
 initMap();
+
     }
   })
 })

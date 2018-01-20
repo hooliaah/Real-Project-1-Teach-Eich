@@ -5,14 +5,34 @@ Body {
 }
 
 a {
-  font-size: 32pt;
+  font-size: 12pt;
+  font-color: white;
   text-align: center;
   /*color: #FF9A6E;*/
-  font-family: "ubuntu";
-  font-weight: bold;
-  background: linear-gradient(to top, #ffffff 22%, #ffffff 90%);
-
+  font-family: "helvetica";
+  /* font-weight: bold; */
+  /* background: linear-gradient(to top, #ffffff 22%, #ffffff 90%); */
 }
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: light gray;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
 nav .nav-header {
   background-color: #ffffff;
 }
@@ -27,6 +47,11 @@ nav .nav-wrapper {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 18pt;
+  font-weight: 700px;
+}
+
 #map-div{
   height:350px;
   /*width:60%;*/
@@ -36,26 +61,26 @@ nav .nav-wrapper {
 
 }
 
+
 #weather-div{
   height:350px;
   /*width:39%;*/
   /*float:left;*/
   /*border: solid;
   border-color: #000000;*/
-  font-size: 16pt;
+  font-size: 12pt;
   margin-left: 6px;
 
 }
 
 #sports-div{
-  height:200px;
+  height:auto;
   width:99%;
-  /*float:left;*/
-  /*border: solid;
-  border-color: #000000;*/
-  font-size: 16pt;
-  margin-top:20px;
-  margin-left: 6px;
+  font-color: white;
+  /* font-size: 12pt; */
+  /* margin-left: 6px; */
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 #places-div{
@@ -64,10 +89,15 @@ nav .nav-wrapper {
   /*float:left;*/
   /*border: solid;
   border-color: #000000;*/
-  font-size: 16pt;
+  font-size: 12pt;
   margin-top:20px;
   margin-left: 6px;
 
+}
+
+.card-panel {
+  margin: 24px;
+  padding: 12px;
 }
 
 .content-card {
@@ -97,4 +127,42 @@ font-size: 10px;
 
 .blue {
   color: blue;
+}
+
+/* sports css */
+
+#sports-news-table {
+  /* font: larger sans-serif; */
+  table-layout: fixed;
+  width: 100%;
+  /* margin-left: 5px; */
+  /* margin-right: 5px; */
+}
+
+#sports-news-col1 {
+  width: 100px;
+}
+
+#sports-news-col2 {
+  width: 80%;
+}
+
+#sports-news-col3  {
+  width: 10%;
+}
+
+.sports-news-image, .sports-news-headline, .sports-news-source {
+  max-width: 100%;
+  max-height: 50px;
+  /* margin-right: 5px; */
+}
+
+.sports-news-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  min-width: 100px;
+  height: auto;
+  max-height:auto;
 }

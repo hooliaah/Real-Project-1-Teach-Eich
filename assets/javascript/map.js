@@ -7,6 +7,10 @@ var loc;
 // search for city, return lat and long
 $("#search").on("change keyup", function() {
   var city = $(this).val()
+
+  // $.getJSON is a method to get JSON data using an AJAX HTTP GET request
+  // google geocode api is used for converting addresses
+  // encodeURIComponent means it takes out any special characters
   $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(city), function(val) {
     if(val.results.length) {
       loc = val.results[0].geometry.location
@@ -14,14 +18,14 @@ $("#search").on("change keyup", function() {
       $("#lon").val(loc.lng)
       console.log(loc.lat);
       console.log(loc.lng);
-console.log(loc, 'the actual value');
-initializeMap();
+
+initMap();
+
     }
   })
 })
 
-// function to display map based on city's lat and long, search for restaurant locations within this area
-function initializeMap() {
+function initMap() {
   var searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
 
   map = new google.maps.Map(document.getElementById('map-div'), {

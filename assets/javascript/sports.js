@@ -1,4 +1,14 @@
-searchNews('Los Angeles');
+
+$("#search").on("change keyup", function() {
+    var location = $("#search").val().trim();
+    setTimeout(function () {
+        if (location != $("#search").val().trim()) {
+            clearTimeout();
+        } else {
+            searchNews(location);
+        }
+    },500)
+});
 
 function searchNews(city,state) {
     var url = 'https://newsapi.org/v2/everything?' +
@@ -12,11 +22,14 @@ function searchNews(city,state) {
         url: url,
         type: "GET",
     }).done(function (data) {
-        pushToDiv(data.articles)
+        setTimeout(function(){
+            pushToDiv(data.articles)
+        },500);
     });
 }
 
 function pushToDiv (data) {
+    $('#sports-div').empty();
     var dataLength = 5;
     if (data.length < 5) {
         dataLength = data.length;
@@ -28,7 +41,6 @@ function pushToDiv (data) {
 
     for (i=1; i < 4; i++) {
         let colElement = $("<col id='sports-news-col" + i + "'>");
-        console.log("colID ", colElement);
         colgroupElement.append(colElement);
     }
 

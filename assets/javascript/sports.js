@@ -7,7 +7,7 @@ $("#search").on("change keyup", function() {
         } else {
             searchNews(location);
         }
-    },1000)
+    },500)
 });
 
 function searchNews(city,state) {
@@ -24,12 +24,12 @@ function searchNews(city,state) {
     }).done(function (data) {
         setTimeout(function(){
             pushToDiv(data.articles)
-        },1000);
+        },500);
     });
 }
 
 function pushToDiv (data) {
-    // $('#sports-div').empty();
+    $('#sports-div').empty();
     var dataLength = 5;
     if (data.length < 5) {
         dataLength = data.length;

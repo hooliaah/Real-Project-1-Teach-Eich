@@ -37,9 +37,13 @@ nav .nav-header {
   background-color: #ffffff;
 }
 nav .nav-wrapper {
-  height:75px;
+  height:50px;
   /* line-height: 200px; */
   background-color: #FF9A6E;
+}
+
+.container {
+  margin-top: 25px;
 }
 
 .form-inline{
@@ -48,7 +52,7 @@ nav .nav-wrapper {
 }
 
 .title {
-  font-size: 18pt;
+  font-size: 24pt;
   font-weight: 700px;
 }
 
@@ -56,7 +60,7 @@ nav .nav-wrapper {
   height:350px;
   /*width:60%;*/
   /*float:right;*/
-  margin-right: 6px;
+  /* margin-right: 6px; */
   /*border-style: solid;*/
 
 }
@@ -96,12 +100,13 @@ nav .nav-wrapper {
 }
 
 .card-panel {
-  margin: 12px;
+  /* margin: 12px; */
   padding: 12px;
   color:#7FC3EB;
 }
 
 .content-card {
+  padding: 5px;
   background-color: grey;
 }
 

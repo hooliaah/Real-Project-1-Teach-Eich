@@ -2,22 +2,22 @@
 https://hooliaah.github.io/Real-Project-1-Teach-Eich/
 
 # Team Members 
-Yen Chiu
-Julie Groth
-Scott Reynolds
-Navid Sarvian
-Cynthia Zapata
+Yen Chiu<br />
+Julie Groth<br />
+Scott Reynolds<br />
+Navid Sarvian<br />
+Cynthia Zapata<br />
 
 # Technologies Used
-HTML5
-CSS3
-JavaScript
-Materialize
+HTML5<br />
+CSS3<br />
+JavaScript<br />
+Materialize<br />
 
 #APIs Used
-Google Maps - https://developers.google.com/maps/
-Google Places - https://developers.google.com/places/
-Weather Underground - https://www.wunderground.com/weather/api/
-News - https://newsapi.org/
+Google Maps - https://developers.google.com/maps/<br />
+Google Places - https://developers.google.com/places/<br />
+Weather Underground - https://www.wunderground.com/weather/api/<br />
+News - https://newsapi.org/<br />
 
 # Future Development Plans

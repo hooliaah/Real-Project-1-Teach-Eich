@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 // variable declaration
 var map;
 var service;
@@ -6,6 +8,7 @@ var loc;
 var searchLocation;
 var searchOptions = ["restaurant", "pharmacy", "atm", "hospital", "library"]
 
+// add search buttons for various place types
 function displayButtons() {
   $("#map-search-div").empty();
   for (var i = 0; i < searchOptions.length; i++) {
@@ -114,4 +117,5 @@ function createMarker(place) {
   google.maps.event.addListener(map, 'click', function () {
     infowindow.close();
   });
-}
+};
+});

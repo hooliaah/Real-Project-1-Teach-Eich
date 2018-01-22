@@ -1,3 +1,4 @@
+$(document).ready(function(){
 //pseudo code
 //initialize variables for this api
 console.log(typeof loc, "is it global");
@@ -53,5 +54,6 @@ function prediction(){
   }
 }
 prediction();
+});
 });
 });

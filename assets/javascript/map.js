@@ -4,16 +4,16 @@ var service;
 var infowindow;
 var loc;
 var searchLocation;
-var searchOptions = ["restaurant", "pharmacy", "gas station"]
+var searchOptions = ["restaurant", "pharmacy", "atm", "hospital", "library"]
 
 function displayButtons() {
   $("#map-search-div").empty();
   for (var i = 0; i < searchOptions.length; i++) {
-      var newButton = $("<button>");
-      newButton.attr("class", "search-button");
-      newButton.data("name", searchOptions[i]);
-      newButton.text(searchOptions[i]);
-      $("#map-search-div").append(newButton);
+    var newButton = $("<button>");
+    newButton.attr("class", "search-button");
+    newButton.data("name", searchOptions[i]);
+    newButton.text(searchOptions[i]);
+    $("#map-search-div").append(newButton);
   }
 }
 displayButtons();
@@ -40,7 +40,7 @@ $("#search").on("change keyup", function () {
 // initiliaze the map and search for restaurant
 function initMap() {
   searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
-//  console.log(searchLocation);
+  //  console.log(searchLocation);
   map = new google.maps.Map(document.getElementById('map-div'), {
     center: searchLocation,
     zoom: 15
@@ -57,7 +57,8 @@ function initMap() {
   service.textSearch(request, callback);
 }
 
-$('#map-search-div').on('click', '.search-button', function() {
+$('#map-search-div').on('click', '.search-button', function () {
+
   searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
   var searchType = $(this).data("name");
 
@@ -110,7 +111,7 @@ function createMarker(place) {
   })
 
   // closes infowindow when map clicked
-  google.maps.event.addListener(map, 'click', function() {
+  google.maps.event.addListener(map, 'click', function () {
     infowindow.close();
   });
 }

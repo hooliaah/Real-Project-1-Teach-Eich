@@ -183,4 +183,7 @@ font-size: 10px;
 
 a.map-link {
   color: #7FC3EB;
+  font-size: 13px;
+  font-weight: 300;
+  text-decoration: underline;
 }

@@ -29,6 +29,7 @@ function searchNews(city,state) {
 }
 
 function pushToDiv (data) {
+    console.log("enter sports.js pushToDiv() function");    
     $('#sports-div').empty();
     var dataLength = 5;
     if (data.length < 5) {
@@ -65,7 +66,7 @@ function pushToDiv (data) {
         tableImage.attr('src',tableImageSource);
         tableDataImage.append(tableImage);
         
-        tableLink.attr('href','tableURL');
+        tableLink.attr('href',tableURL);
         tableLink.attr('target','_new');
         tableLink.text(tableHeadline);
         tableDataHeadline.append(tableLink);

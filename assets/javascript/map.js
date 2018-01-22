@@ -3,6 +3,20 @@ var map;
 var service;
 var infowindow;
 var loc;
+var searchLocation;
+var searchOptions = ["restaurant", "pharmacy", "gas station"]
+
+function displayButtons() {
+  $("#map-search-div").empty();
+  for (var i = 0; i < searchOptions.length; i++) {
+      var newButton = $("<button>");
+      newButton.attr("class", "search-button");
+      newButton.data("name", searchOptions[i]);
+      newButton.text(searchOptions[i]);
+      $("#map-search-div").append(newButton);
+  }
+}
+displayButtons();
 
 // search for city, return lat and long
 $("#search").on("change keyup", function () {
@@ -25,8 +39,8 @@ $("#search").on("change keyup", function () {
 
 // initiliaze the map and search for restaurant
 function initMap() {
-  var searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
-
+  searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
+//  console.log(searchLocation);
   map = new google.maps.Map(document.getElementById('map-div'), {
     center: searchLocation,
     zoom: 15
@@ -43,6 +57,20 @@ function initMap() {
   service.textSearch(request, callback);
 }
 
+$('#map-search-div').on('click', '.search-button', function() {
+  searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
+  var searchType = $(this).data("name");
+
+  var request = {
+    location: searchLocation,
+    radius: '500',
+    query: searchType
+  };
+
+  infowindow = new google.maps.InfoWindow();
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+})
 
 // function to look for search results. If search results exist, run createMarker
 function callback(results, status) {
@@ -58,46 +86,31 @@ function callback(results, status) {
 function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
-      map: map,
-      // icon: {
-      //     url: 'http://maps.gstatic.com/mapfiles/circle.png',
-      //     anchor: new google.maps.Point(10, 10),
-      //     scaledSize: new google.maps.Size(10, 17)
-      // },
-      position: placeLoc
+    map: map,
+    position: placeLoc
   });
-  marker.addListener('click', function() {
-
+  marker.addListener('click', function () {
     var request = {
-        reference: place.reference
+      reference: place.reference
     };
-    service.getDetails(request, function(details, status) {
 
+    // get details of place clicked and display name, address, website, rating, and phone #
+    service.getDetails(request, function (details, status) {
       infowindow.setContent([
-        details.name,
+        "<div class='info-window-div'>",
+        "<span class='info-window-name'>" + details.name + "</span>",
+        "Rating: " + details.rating + "/5 stars",
         details.formatted_address,
-        details.website,
-        details.rating,
-        details.formatted_phone_number].join("<br />"));
+        details.formatted_phone_number,
+        "<a class='map-link' target='_blank' href='" + details.url + "'>More info.</a>",
+        "</div>"].join("<br />"));
       infowindow.open(map, marker);
     });
 
   })
+
+  // closes infowindow when map clicked
+  google.maps.event.addListener(map, 'click', function() {
+    infowindow.close();
+  });
 }
-
-// creates markers for each search result
-// function createMarker(place) {
-//   var placeLoc = place.geometry.location;
-//   var marker = new google.maps.Marker({
-//     map: map,
-//     position: place.geometry.location
-//   });
-
-  // when marker is clicked, display information
-  // google.maps.event.addListener(marker, 'click', function () {
-  //   infowindow.setContent(place.name);
-  //   console.log(JSON.stringify(place));
-  //   infowindow.open(map, this);
-  // });
-// }
-

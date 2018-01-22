@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
 $("#search").on("change keyup", function() {
     var location = $("#search").val().trim();
     setTimeout(function () {
@@ -77,3 +77,4 @@ function pushToDiv (data) {
         $('#sports-rows').append(tableRow.clone(true, true));
     }
 }
+});

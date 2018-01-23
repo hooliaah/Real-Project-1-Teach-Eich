@@ -4,6 +4,11 @@ Body {
   background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
 }
 
+#search {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
 a {
   font-size: 12pt;
   color: white;
@@ -34,7 +39,12 @@ a:active {
 }
 
 nav .nav-header {
-  background-color: #ffffff;
+  background-color: #7FC3EB;
+ 
+}
+
+nav img {
+  height: 50px;
 }
 nav .nav-wrapper {
   height:50px;
@@ -105,6 +115,9 @@ nav .nav-wrapper {
   color:#7FC3EB;
 }
 
+.card-title, .card-content {
+  color:#7FC3EB;
+}
 .content-card {
   padding: 5px;
   background-color: grey;

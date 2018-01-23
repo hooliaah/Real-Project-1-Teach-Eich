@@ -3,11 +3,13 @@ Body {
   background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
 }
 
+
 #submit {
   margin: 0 auto;
   align-content: center;
   display: block;
 }
+
 a {
   font-size: 12pt;
   color: white;
@@ -23,12 +25,15 @@ nav .nav-header {
   background-color: #7FC3EB;
 }
 
+nav .nav-header {
+  background-color: #7FC3EB;
+}
+
 nav img {
   height: 75px;
   display: block;
   margin: 0 auto;
   padding: 10px;
-
 }
 
 nav .nav-wrapper {
@@ -83,6 +88,7 @@ nav .nav-wrapper {
   text-align: center;
   display: block;
 }
+
 .content-card {
   padding: 5px;
   background-color: grey;

@@ -34,8 +34,6 @@ $("#submit").on("click", function (e) {
       loc = val.results[0].geometry.location
       $("#lat").val(loc.lat)
       $("#lon").val(loc.lng)
-      // console.log(loc.lat);
-      // console.log(loc.lng);
       initMap();
     }
   })

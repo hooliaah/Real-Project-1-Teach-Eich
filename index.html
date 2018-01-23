@@ -3,45 +3,45 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Popp'in</title>
+  <title>What's poppin?</title>
   <link rel="shortcut icon" href="assets/images/favicon7.png" type="image/png" />
-  <!-- Materialized link -->
+  <!-- materialized link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <!-- Link to external stylesheet -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <!-- Link to jQuery -->
+
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
 </head>
 
 <body>
   <nav>
     <div class="nav-header">
-      <img id="nav-image" src="assets/images/poppin-logo.png" />
+        <img src="assets/images/poppin-logo.png"/>
     </div>
   </nav>
 
-  <form>
-    <div class="input-field">
-      <div class="row">
-        <div class="col s12">
-          <input id="search" placeholder="Search desired location here." type="search" required></input>
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col s12">
-          <input id="submit" type="submit"></input>
-        </div>
-      </div>
-    </div>
-  </form>
-
   <div class="container">
+    <form>
+      <div class="input-field">
+        <div class="row">
+          <div class="col s12">
+            <input id="search" placeholder="Search desired location here." type="search" required></input>
+            <input id="submit" type="submit"></input>
+          </div>
+        </div>
+      </div>
+    </form>
     <div class="row">
-      <div class="col s12">
+      <div class="col s12 l6">
         <div class="card-panel">
           <span class="card-title">Weather</span>
-          <!-- come back to this line styling -->
           <div class="card-content" id="weather-div" align="center">
             <div class="city"></div>
             <div class="temp"></div>
@@ -49,7 +49,6 @@
         </div>
       </div>
     </div>
-
       <div class="row">
         <div class="col s12 l6">
           <div class="card-panel">
@@ -59,12 +58,11 @@
           </div>
       </div>
     </div>
-
     <div class="row">
-      <div class="col s12">
+      <div class="col s12 m12">
+        <!-- <div class="card-panel">Sports</div> -->
         <div class="card-panel">
         <span class="card-title center">Sports News</span>
-
           <div class="card-content" id="sports-div" align="center"></div>
         </div>
       </div>
@@ -72,19 +70,20 @@
 
     <!-- <div class="row">
       <div class="col s12 m12">
+        <div class="card-panel">Restaurants</div>
         <div class="card-panel">
-          <span class="card-title">Restaurants</span>
           <div class="card-content" id="places-div" align="center"></div>
         </div>
       </div>
     </div> -->
 
-  </div>
+  </div> <!-- container close -->
 
-  <!-- Google Maps API reference -->
+
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByBWhXulCPr2mjC2po6lufTVuHD9QmeU0&libraries=places"></script>
-  <!-- Links to external JS files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/javascript/map.js" defer></script>
+  <script src="assets/javascript/app.js"></script>
   <script src="assets/javascript/sports.js"></script>
   <script src="assets/javascript/weather.js"></script>
 

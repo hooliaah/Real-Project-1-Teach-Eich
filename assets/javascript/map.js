@@ -22,7 +22,8 @@ function displayButtons() {
 displayButtons();
 
 // search for city, return lat and long
-$("#submit").on("click", function () {
+$("#submit").on("click", function (e) {
+  e.preventDefault();
   var city = $("#search").val();
   console.log(city);
 

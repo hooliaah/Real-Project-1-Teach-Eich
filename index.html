@@ -23,8 +23,7 @@
 <body>
   <nav>
     <div class="nav-header">
-      <a href="#" class="title valign center-block title" style="color:#7FC3EB">What's Poppin'
-        <a>
+        <img src="assets/images/poppin-logo.png"/>
     </div>
   </nav>
 
@@ -32,8 +31,17 @@
     <!-- <div class="nav-wrapper"> -->
       <form>
         <div class="input-field">
-          <input id="search" placeholder="Search desired location here." type="search" required></input>
-          <input id="submit" type="submit"></input>
+          <div class="row">
+            <div class="col s12">
+
+              <input id="search" placeholder="Search desired location here." type="search" required></input>
+              <input id="submit" type="submit"></input>
+            </div>
+            <!-- <div class="col ">
+
+            </div> -->
+
+          </div>
           <!-- <label class="label-icon" for="search">
             <i class="material-icons"></i>
           </label>
@@ -46,36 +54,35 @@
   <div class="container">
 
     <div class="row">
-      <div class="col s12 m6">
+      <div class="col s12 l6">
         <div class="card-panel">Weather</div>
         <div class="card-panel">
-          <div class="content-card" id="weather-div" align="center">
+          <div class="card-content" id="weather-div" align="center">
             <div class="city"></div>
             <div class="temp"></div>
-
-
           </div>
         </div>
       </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col s12 m6">
+      <div class="col s12 l6">
         <div class="card-panel">Google Map</div>
         <div class="card-panel">
-          <div class="content-card" id="map-div"></div>
+          <div class="card-content" id="map-div"></div>
           <div id="map-search-div"></div>
         </div>
       </div>
     </div>
 
 
+    <!-- <div class="row">
+    </div> -->
+
+
     <div class="row">
       <div class="col s12 m12">
-        <div class="card-panel">Sports</div>
+        <!-- <div class="card-panel">Sports</div> -->
         <div class="card-panel">
-          <div class="content-card" id="sports-div" align="center"></div>
+        <span class="card-title">Sports News</span>
+          <div class="card-content" id="sports-div" align="center"></div>
         </div>
       </div>
     </div>
@@ -84,7 +91,7 @@
       <div class="col s12 m12">
         <div class="card-panel">Restaurants</div>
         <div class="card-panel">
-          <div class="content-card" id="places-div" align="center"></div>
+          <div class="card-content" id="places-div" align="center"></div>
         </div>
       </div>
     </div>

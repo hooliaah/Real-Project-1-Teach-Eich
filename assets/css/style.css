@@ -1,28 +1,28 @@
-body {
+
+Body {
   background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
 }
+
 
 #submit {
   margin: 0 auto;
   align-content: center;
-  float: none;
-  margin-left: 25px;
   display: block;
+}
+
+a {
+  font-size: 12pt;
+  color: white;
+  text-align: center;
+  font-family: "helvetica";
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #7FC3EB;
 }
 
 nav .nav-header {
   background-color: #7FC3EB;
-}
-
-/* come back to this one */
-nav img {
-  height: 100px;
-  display: block;
-  padding-top: 10px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  align-content: center;
 }
 
 nav .nav-header {
@@ -45,35 +45,31 @@ nav .nav-wrapper {
   margin-top: 25px;
 }
 
-.card-title {
-  font-size: 20pt;
+.form-inline{
+  font-size: 12pt;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24pt;
   font-weight: 700px;
 }
 
-/* come back to this one */
 #map-div{
-  /*width:60%;*/
-  /*float:right;*/
-  /* margin-right: 6px; */
-  /*border-style: solid;*/
   height:400px;
 }
 
-/* come back to this one */
+
 #weather-div{
   height:auto;
   font-size: 12pt;
 }
 
-/* come back to this one */
 #sports-div{
   height:auto;
   color: 7FC3EB;
   padding-left: 12px;
   padding-right: 12px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 #places-div{
@@ -93,7 +89,38 @@ nav .nav-wrapper {
   display: block;
 }
 
+.content-card {
+  padding: 5px;
+  background-color: grey;
+}
+
+.large {
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: bold;
+
+}
+
+.small {
+font-size: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
 /* sports css */
+
 #sports-news-table {
   table-layout: fixed;
   width: 100%;
@@ -123,10 +150,11 @@ nav .nav-wrapper {
   width:100%;
   min-width: 100px;
   height: auto;
-  max-height: auto;
+  max-height:auto;
 }
 
 /* Maps CSS */
+
 .info-window-name {
   font-weight: bold;
   color: #FF9A6E;

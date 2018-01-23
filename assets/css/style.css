@@ -1,48 +1,33 @@
-
-Body {
+body {
   background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
 }
 
-
-#submit {
-  margin: 0 auto;
-  align-content: center;
-  display: block;
-}
-
-a {
-  font-size: 12pt;
-  color: white;
-  text-align: center;
-  font-family: "helvetica";
-}
-
-a:link, a:visited, a:hover, a:active {
-  color: #7FC3EB;
-}
-
 nav .nav-header {
   background-color: #7FC3EB;
-}
-
-nav .nav-header {
-  background-color: #7FC3EB;
+  border-bottom: solid 5px #ee6e73; 
 }
 
 nav img {
-  height: 75px;
+  height: 100px;
   display: block;
   margin: 0 auto;
   padding: 10px;
 }
 
-nav .nav-wrapper {
-  height:50px;
-  background-color: #FF9A6E;
+#submit {
+  margin: 0 auto;
+  align-content: center;
+  display: block;
+  color: #7FC3EB;
+}
+
+#search {
+  margin: 20px 0px;
+  border-bottom: solid 1px #ee6e73;
 }
 
 .container {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .form-inline{
@@ -50,15 +35,14 @@ nav .nav-wrapper {
   margin: 0 auto;
 }
 
-.title {
-  font-size: 24pt;
+.card-title {
+  font-size: 20pt;
   font-weight: 700px;
 }
 
 #map-div{
   height:400px;
 }
-
 
 #weather-div{
   height:auto;
@@ -67,19 +51,15 @@ nav .nav-wrapper {
 
 #sports-div{
   height:auto;
-  color: 7FC3EB;
+  color: #7FC3EB;
   padding-left: 12px;
   padding-right: 12px;
-}
-
-#places-div{
-  height:auto;
-  font-size: 12pt;
 }
 
 .card-panel {
   padding: 12px;
   color:#7FC3EB;
+  text-align: center;
 }
 
 .card-title, .card-content {
@@ -91,36 +71,9 @@ nav .nav-wrapper {
 
 .content-card {
   padding: 5px;
-  background-color: grey;
-}
-
-.large {
-  font-size: 14px;
-}
-
-.bold {
-  font-weight: bold;
-
-}
-
-.small {
-font-size: 10px;
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
-}
-
-.blue {
-  color: blue;
 }
 
 /* sports css */
-
 #sports-news-table {
   table-layout: fixed;
   width: 100%;
@@ -147,14 +100,13 @@ font-size: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width:100%;
+  width: 100%;
   min-width: 100px;
   height: auto;
   max-height:auto;
 }
 
 /* Maps CSS */
-
 .info-window-name {
   font-weight: bold;
   color: #FF9A6E;
@@ -166,4 +118,9 @@ a.map-link {
   font-size: 13px;
   font-weight: 300;
   text-decoration: underline;
+}
+
+.search-button {
+  margin: 4px;
+  text-align: center;
 }

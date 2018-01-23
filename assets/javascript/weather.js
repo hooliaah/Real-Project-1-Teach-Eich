@@ -12,7 +12,7 @@ $("#submit").on("click", function(){
 });//end of change keyup
 function weather(location){
   var APIKey = "73b0b0a8d48f5e0f";
-  var queryURL = "http://api.wunderground.com/api/" + APIKey + "/conditions/q/CA/" + location + ".json";
+  var queryURL = "https://api.wunderground.com/api/" + APIKey + "/conditions/q/CA/" + location + ".json";
   $.ajax({
       url: queryURL,
       method: "GET"
@@ -23,7 +23,7 @@ function weather(location){
 prediction(location);
 });//end of condition function
 function prediction(location){
-    var query2URL = "http://api.wunderground.com/api/73b0b0a8d48f5e0f/forecast/q/CA/" + location + ".json";
+    var query2URL = "https://api.wunderground.com/api/73b0b0a8d48f5e0f/forecast/q/CA/" + location + ".json";
     $.ajax({
       url: query2URL,
       method: "GET"

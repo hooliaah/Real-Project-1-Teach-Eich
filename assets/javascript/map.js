@@ -22,8 +22,9 @@ function displayButtons() {
 displayButtons();
 
 // search for city, return lat and long
-$("#search").on("change keyup", function () {
-  var city = $(this).val()
+$("#submit").on("click", function () {
+  var city = $("#search").val();
+  console.log(city);
 
   // $.getJSON is a method to get JSON data using an AJAX HTTP GET request
   // google geocode api is used for converting addresses

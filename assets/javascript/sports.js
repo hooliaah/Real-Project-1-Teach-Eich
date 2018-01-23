@@ -1,6 +1,7 @@
 $(document).ready(function(){
-$("#search").on("change keyup", function() {
+$("#submit").on("click", function() {
     var location = $("#search").val().trim();
+    console.log('location ', location);
     setTimeout(function () {
         if (location != $("#search").val().trim()) {
             clearTimeout();
@@ -29,7 +30,7 @@ function searchNews(city,state) {
 }
 
 function pushToDiv (data) {
-    console.log("enter sports.js pushToDiv() function");    
+    console.log("enter sports.js pushToDiv() function");
     $('#sports-div').empty();
     var dataLength = 5;
     if (data.length < 5) {
@@ -56,23 +57,23 @@ function pushToDiv (data) {
         var tableHeadline = data[i].title;
         var tableSource = data[i].source.name;
         var tableRow = $('<tr class="sports-news-row">');
-    
+
         var tableDataImage = $('<td class="sports-news-image">');
         var tableDataHeadline = $('<td class="sports-news-headline">');
         var tableDataSource = $('<td class="sports-news-source">');
         var tableImage = $('<img>');
         var tableLink = $('<a>');
-        
+
         tableImage.attr('src',tableImageSource);
         tableDataImage.append(tableImage);
-        
+
         tableLink.attr('href',tableURL);
         tableLink.attr('target','_new');
         tableLink.text(tableHeadline);
         tableDataHeadline.append(tableLink);
-    
+
         tableDataSource.text(tableSource);
-    
+
         tableRow.append(tableDataImage,tableDataHeadline,tableDataSource);
 
         $('#sports-rows').append(tableRow.clone(true, true));

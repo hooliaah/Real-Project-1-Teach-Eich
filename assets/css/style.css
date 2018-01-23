@@ -1,30 +1,20 @@
 
 Body {
-  /*background-color: white;*/
   background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
 }
 
-#search {
-  margin-left: 25px;
-  /* margin-right: 25px; */
-}
 
 #submit {
+  margin: 0 auto;
   align-content: center;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-
+  display: block;
 }
 
 a {
   font-size: 12pt;
   color: white;
   text-align: center;
-  /*color: #FF9A6E;*/
   font-family: "helvetica";
-  /* font-weight: bold; */
-  /* background: linear-gradient(to top, #ffffff 22%, #ffffff 90%); */
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -33,30 +23,21 @@ a:link, a:visited, a:hover, a:active {
 
 nav .nav-header {
   background-color: #7FC3EB;
- 
+}
+
+nav .nav-header {
+  background-color: #7FC3EB;
 }
 
 nav img {
   height: 75px;
   display: block;
-  padding-top: 10px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  align-content: center;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-nav .nav-header {
-  background-color: #7FC3EB;
- 
-}
-
-nav img {
-  height: 50px;
-}
 nav .nav-wrapper {
   height:50px;
-  /* line-height: 200px; */
   background-color: #FF9A6E;
 }
 
@@ -75,62 +56,39 @@ nav .nav-wrapper {
 }
 
 #map-div{
-  height:350px;
-  /*width:60%;*/
-  /*float:right;*/
-  /* margin-right: 6px; */
-  /*border-style: solid;*/
-
+  height:400px;
 }
 
 
 #weather-div{
   height:auto;
-  /*width:39%;*/
-  /*float:left;*/
-  /*border: solid;
-  border-color: #000000;*/
   font-size: 12pt;
-  /* margin-left: 6px; */
-
 }
 
 #sports-div{
   height:auto;
-  /* width:99%; */
-  /* font-size: 12pt; */
-  /* margin-left: 6px; */
+  color: 7FC3EB;
   padding-left: 12px;
   padding-right: 12px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-
 }
 
 #places-div{
   height:auto;
-  /* width:99%; */
-  /*float:left;*/
-  /*border: solid;
-  border-color: #000000;*/
   font-size: 12pt;
-  /* margin-top:20px; */
-  /* margin-left: 6px; */
-
 }
 
 .card-panel {
-  /* margin: 12px; */
   padding: 12px;
   color:#7FC3EB;
 }
 
 .card-title, .card-content {
   color:#7FC3EB;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
+  display: block;
 }
+
 .content-card {
   padding: 5px;
   background-color: grey;
@@ -164,11 +122,8 @@ font-size: 10px;
 /* sports css */
 
 #sports-news-table {
-  /* font: larger sans-serif; */
   table-layout: fixed;
   width: 100%;
-  /* margin-left: 5px; */
-  /* margin-right: 5px; */
 }
 
 #sports-news-col1 {
@@ -186,7 +141,6 @@ font-size: 10px;
 .sports-news-image, .sports-news-headline, .sports-news-source {
   max-width: 100%;
   max-height: 50px;
-  /* margin-right: 5px; */
 }
 
 .sports-news-image img {

@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 // variable declaration
 var map;
 var service;
@@ -7,6 +5,7 @@ var infowindow;
 var loc;
 var searchLocation;
 var searchOptions = ["restaurant", "pharmacy", "atm", "hospital", "library"]
+var markers = [];
 
 // add search buttons for various place types
 function displayButtons() {
@@ -22,7 +21,8 @@ function displayButtons() {
 displayButtons();
 
 // search for city, return lat and long
-$("#submit").on("click", function () {
+$("#submit").on("click", function (e) {
+  e.preventDefault();
   var city = $("#search").val();
   console.log(city);
 
@@ -62,7 +62,7 @@ function initMap() {
 }
 
 $('#map-search-div').on('click', '.search-button', function () {
-
+  clearMarkers();
   searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
   var searchType = $(this).data("name");
 
@@ -111,12 +111,16 @@ function createMarker(place) {
         "</div>"].join("<br />"));
       infowindow.open(map, marker);
     });
-
   })
-
+  markers.push(marker);
   // closes infowindow when map clicked
   google.maps.event.addListener(map, 'click', function () {
     infowindow.close();
   });
 };
-});
+
+function clearMarkers(){
+  markers.forEach(function(el){
+    el.setMap(null);
+  })
+}

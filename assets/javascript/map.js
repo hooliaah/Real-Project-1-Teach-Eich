@@ -31,7 +31,7 @@ $("#submit").on("click", function () {
   // encodeURIComponent means it takes out any special characters
   $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(city), function (val) {
     if (val.results.length) {
-      loc = val.results[0].geometry.location;
+      loc = val.results[0].geometry.location
       $("#lat").val(loc.lat)
       $("#lon").val(loc.lng)
       // console.log(loc.lat);

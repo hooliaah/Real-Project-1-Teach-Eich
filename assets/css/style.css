@@ -48,7 +48,7 @@ nav img {
 
 #weather-div{
   height: auto;
-  font-size: 18pt;
+  font-size: 16pt;
 }
 
 #sports-div{
@@ -56,6 +56,7 @@ nav img {
   color: #7FC3EB;
   padding-left: 12px;
   padding-right: 12px;
+  font-size: 16pt;
 }
 
 .card-panel {

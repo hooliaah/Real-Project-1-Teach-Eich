@@ -12,10 +12,10 @@ $("#submit").on("click", function (e) {
             if (val.results.length) {
                 loc = val.results[0].geometry.location
                 weather();
-                // initMap();
+                initMap();
             }
-            // var location = $("#search").val().trim();
-            // searchNews(location);
+            var location = $("#search").val().trim();
+            searchNews(location);
         })
     } else {
         Materialize.toast('Please enter a city name!', 4000) // 4000 is the duration of the toast

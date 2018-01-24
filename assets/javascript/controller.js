@@ -4,7 +4,6 @@ var loc;
 $("#submit").on("click", function (e) {
     e.preventDefault();
     var city = $("#search").val().trim();
-
     if ((city).match(/[a-z]/)) {
         // $.getJSON is a method to get JSON data using an AJAX HTTP GET request
         // google geocode api is used for converting addresses
@@ -13,11 +12,10 @@ $("#submit").on("click", function (e) {
             if (val.results.length) {
                 loc = val.results[0].geometry.location
                 weather();
-                initMap();
+                // initMap();
             }
-
-            var location = $("#search").val().trim();
-            searchNews(location);
+            // var location = $("#search").val().trim();
+            // searchNews(location);
         })
     } else {
         Materialize.toast('Please enter a city name!', 4000) // 4000 is the duration of the toast

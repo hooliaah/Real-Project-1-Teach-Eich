@@ -1,5 +1,6 @@
 // function to get current weather conditions via GET call to API and display in HTML
 function weather() {
+  $('#weather-div').empty();
   var APIKey = "73b0b0a8d48f5e0f";
   var queryURL = "https://api.wunderground.com/api/" + APIKey + "/conditions/q/" + loc.lat + "," + loc.lng + ".json";
   $.ajax({

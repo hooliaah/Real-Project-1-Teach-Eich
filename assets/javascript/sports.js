@@ -1,17 +1,12 @@
-$(document).ready(function(){
-$("#submit").on("click", function() {
+// function to initiate search
+$("#submit").on("click", function (e) {
+    e.preventDefault();
     var location = $("#search").val().trim();
-    console.log('location ', location);
-    setTimeout(function () {
-        if (location != $("#search").val().trim()) {
-            clearTimeout();
-        } else {
-            searchNews(location);
-        }
-    },500)
+    searchNews(location);
 });
 
-function searchNews(city,state) {
+// function to search for sports news in selected city
+function searchNews(city, state) {
     var url = 'https://newsapi.org/v2/everything?' +
         'domains=espn.com,si.com&' +
         'from=2018-12-01' +
@@ -23,14 +18,14 @@ function searchNews(city,state) {
         url: url,
         type: "GET",
     }).done(function (data) {
-        setTimeout(function(){
+        setTimeout(function () {
             pushToDiv(data.articles)
-        },500);
+        }, 500);
     });
 }
 
-function pushToDiv (data) {
-    console.log("enter sports.js pushToDiv() function");
+// function to display data in HTML
+function pushToDiv(data) {
     $('#sports-div').empty();
     var dataLength = 5;
     if (data.length < 5) {
@@ -41,7 +36,7 @@ function pushToDiv (data) {
     var colElement = $('<col>');
     var tbodyElement = $('<tbody id="sports-rows">');
 
-    for (i=1; i < 4; i++) {
+    for (i = 1; i < 4; i++) {
         let colElement = $("<col id='sports-news-col" + i + "'>");
         colgroupElement.append(colElement);
     }
@@ -51,7 +46,7 @@ function pushToDiv (data) {
 
     $('#sports-div').append(tableElement);
 
-    for (i=0; i < dataLength; i++) {
+    for (i = 0; i < dataLength; i++) {
         var tableImageSource = data[i].urlToImage;
         var tableURL = data[i].url;
         var tableHeadline = data[i].title;
@@ -64,19 +59,18 @@ function pushToDiv (data) {
         var tableImage = $('<img>');
         var tableLink = $('<a>');
 
-        tableImage.attr('src',tableImageSource);
+        tableImage.attr('src', tableImageSource);
         tableDataImage.append(tableImage);
 
-        tableLink.attr('href',tableURL);
-        tableLink.attr('target','_new');
+        tableLink.attr('href', tableURL);
+        tableLink.attr('target', '_new');
         tableLink.text(tableHeadline);
         tableDataHeadline.append(tableLink);
 
         tableDataSource.text(tableSource);
 
-        tableRow.append(tableDataImage,tableDataHeadline,tableDataSource);
+        tableRow.append(tableDataImage, tableDataHeadline, tableDataSource);
 
         $('#sports-rows').append(tableRow.clone(true, true));
     }
 }
-});

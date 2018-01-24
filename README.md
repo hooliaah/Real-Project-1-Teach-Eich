@@ -14,10 +14,17 @@ CSS3<br />
 JavaScript<br />
 Materialize<br />
 
-#APIs Used
+# APIs Used
 Google Maps - https://developers.google.com/maps/<br />
 Google Places - https://developers.google.com/places/<br />
 Weather Underground - https://www.wunderground.com/weather/api/<br />
 News - https://newsapi.org/<br />
 
 # Future Development Plans
+Detect browser location.<br />
+Allow for search outside California.<br />
+Store previous locations and provide list in dropdown menu.<br />
+Allow user to change dashboard layout.<br />
+Select what types of sports you are interested in.<br />
+Add additional APIs, such as Yelp and Flickr.<br />
+Update Google Map search results when map boundaries change.<br />

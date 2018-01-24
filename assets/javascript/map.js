@@ -2,7 +2,6 @@
 var map;
 var service;
 var infowindow;
-var loc;
 var searchLocation;
 var searchOptions = ["Restaurant", "Pharmacy", "ATM", "Hospital", "Library"]
 var markers = [];
@@ -19,28 +18,6 @@ function displayButtons() {
   }
 }
 displayButtons();
-
-// search for city, return lat and long
-$("#submit").on("click", function (e) {
-  e.preventDefault();
-  var city = $("#search").val().trim();
-
-  if ((city).match(/[a-z]/)) {
-  // $.getJSON is a method to get JSON data using an AJAX HTTP GET request
-  // google geocode api is used for converting addresses
-  // encodeURIComponent means it takes out any special characters
-  $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(city), function (val) {
-    if (val.results.length) {
-      loc = val.results[0].geometry.location
-      $("#lat").val(loc.lat)
-      $("#lon").val(loc.lng)
-      initMap();
-    }
-  })
-  } else {
-    Materialize.toast('Please enter a city name!', 4000) // 4000 is the duration of the toast
-  }
-})
 
 // initiliaze the map and search for restaurant
 function initMap() {

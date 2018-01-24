@@ -1,10 +1,3 @@
-// function to initiate search
-$("#submit").on("click", function (e) {
-    e.preventDefault();
-    var location = $("#search").val().trim();
-    searchNews(location);
-});
-
 // function to search for sports news in selected city
 function searchNews(city, state) {
     var url = 'https://newsapi.org/v2/everything?' +

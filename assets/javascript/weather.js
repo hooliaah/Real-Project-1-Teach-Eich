@@ -7,9 +7,20 @@ function weather() {
     method: "GET"
   })
     .done(function (response) {
-      console.log(response);
-      var city = $(".city").html("<p class='weather-conditions'>" + response.current_observation.display_location.city + " Current Weather Condition</p>");
-      var temp = $(".temp").html("<p>Temperature (F): " + response.current_observation.temp_f + "</p>");
+      var tableImage = $('<img>');
+      var tableP = $("<p>");
+      var wIconToday = response.current_observation.icon_url;
+      var wTempToday = response.current_observation.temp_f;
+      var feelsLike = response.current_observation.feelslike_f;
+      var newDiv = $('<div>');
+
+      tableImage.attr('src', wIconToday);
+      tableP.append("<p class='weather-condition-p'>Current Temp " + wTempToday + "&#8457</p>");
+      tableP.append("<p class='weather-condition-p'>Feels Like " + feelsLike + "&#8457</p>");
+      newDiv.append("Today<br>", tableImage, tableP);
+      newDiv.attr('class', "weather-card")
+      $("#weather-div").append(newDiv);
+
       prediction(location);
     }); // end of condition function
 
@@ -21,16 +32,38 @@ function weather() {
       method: "GET"
     })
       .done(function (response) {
-        for (let i = 0; i < 3; i++) {
-          var newDiv = $("<div>");
-          var paragraph = $("<p>");
-          var day = response.forecast.txt_forecast.forecastday[i].title;
-          var condition = response.forecast.txt_forecast.forecastday[i].fcttext;
-          newDiv.append(day);
-          paragraph.append(condition);
-          newDiv.append(paragraph);
-          $("#weather-div").append(newDiv);
-        }
+        console.log(response);
+        var iconTomorrowImg = $('<img>');
+        var tablePTomorrow = $('<p>');
+        var tomorrowDiv = $('<div>');
+        var tomorrowDay = response.forecast.simpleforecast.forecastday[0].date.weekday;
+        var iconTomorrow = response.forecast.simpleforecast.forecastday[0].icon_url;
+        var highTempTomorrow = response.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+        var lowTempTomorrow = response.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+        var conditionsTomorrow = response.forecast.simpleforecast.forecastday[0].conditions;
+
+        iconTomorrowImg.attr('src', iconTomorrow);
+        tablePTomorrow.append("<p class='weather-condition-p'>High " + highTempTomorrow + "&#8457" + " / Low " + lowTempTomorrow + "&#8457</p>");
+        tablePTomorrow.append("<p class='weather-condition-p'>Conditions: " + conditionsTomorrow + "</p>");
+        tomorrowDiv.append(tomorrowDay + "<br>", iconTomorrowImg, tablePTomorrow);
+        tomorrowDiv.attr('class', "weather-card")
+        $("#weather-div").append(tomorrowDiv);
+
+        var iconNextDayImg = $('<img>');
+        var tablePNextDay = $('<p>');
+        var nextDiv = $('<div>');
+        var nextDayDay = response.forecast.simpleforecast.forecastday[1].date.weekday;
+        var iconNextDay = response.forecast.simpleforecast.forecastday[1].icon_url;
+        var highTempNextDay = response.forecast.simpleforecast.forecastday[1].high.fahrenheit;
+        var lowTempNextDay = response.forecast.simpleforecast.forecastday[1].low.fahrenheit;
+        var conditionsNextDay = response.forecast.simpleforecast.forecastday[1].conditions;
+
+        iconNextDayImg.attr('src', iconNextDay);
+        tablePNextDay.append("<p class='weather-condition-p'>High " + highTempNextDay + "&#8457" + " / Low " + lowTempNextDay + "&#8457</p>");
+        tablePNextDay.append("<p class='weather-condition-p'>Conditions: " + conditionsNextDay + "</p>");
+        nextDiv.append(nextDayDay + "<br>", iconNextDayImg, tablePNextDay);
+        nextDiv.attr('class', "weather-card")
+        $("#weather-div").append(nextDiv);
       });
   };
 };

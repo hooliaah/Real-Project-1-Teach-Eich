@@ -12,7 +12,8 @@ Cynthia Zapata<br />
 HTML5<br />
 CSS3<br />
 JavaScript<br />
-Materialize<br />
+jQuery<br />
+Materialize CSS<br />
 
 # APIs Used
 Google Maps - https://developers.google.com/maps/<br />
@@ -22,7 +23,6 @@ News - https://newsapi.org/<br />
 
 # Future Development Plans
 Detect browser location.<br />
-Allow for search outside California.<br />
 Store previous locations and provide list in dropdown menu.<br />
 Allow user to change dashboard layout.<br />
 Select what types of sports you are interested in.<br />

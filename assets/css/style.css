@@ -80,6 +80,15 @@ nav img {
   font-size: 20pt;
 }
 
+.weather-card {
+  display: inline-block;
+  margin: 10px 15px;
+}
+
+.weather-condition-p {
+  margin: 0rem;
+}
+
 /* sports css */
 #sports-news-table {
   table-layout: fixed;

@@ -32,7 +32,6 @@ function weather() {
       method: "GET"
     })
       .done(function (response) {
-        console.log(response);
         var iconTomorrowImg = $('<img>');
         var tablePTomorrow = $('<p>');
         var tomorrowDiv = $('<div>');

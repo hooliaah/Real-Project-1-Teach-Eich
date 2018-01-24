@@ -4,7 +4,7 @@ var service;
 var infowindow;
 var loc;
 var searchLocation;
-var searchOptions = ["restaurant", "pharmacy", "atm", "hospital", "library"]
+var searchOptions = ["Restaurant", "Pharmacy", "ATM", "Hospital", "Library"]
 var markers = [];
 
 // add search buttons for various place types
@@ -23,9 +23,9 @@ displayButtons();
 // search for city, return lat and long
 $("#submit").on("click", function (e) {
   e.preventDefault();
-  var city = $("#search").val();
-  console.log(city);
+  var city = $("#search").val().trim();
 
+  if ((city).match(/[a-z]/)) {
   // $.getJSON is a method to get JSON data using an AJAX HTTP GET request
   // google geocode api is used for converting addresses
   // encodeURIComponent means it takes out any special characters
@@ -37,12 +37,14 @@ $("#submit").on("click", function (e) {
       initMap();
     }
   })
+  } else {
+    Materialize.toast('Please enter a city name!', 4000) // 4000 is the duration of the toast
+  }
 })
 
 // initiliaze the map and search for restaurant
 function initMap() {
   searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
-  //  console.log(searchLocation);
   map = new google.maps.Map(document.getElementById('map-div'), {
     center: searchLocation,
     zoom: 15
@@ -59,6 +61,7 @@ function initMap() {
   service.textSearch(request, callback);
 }
 
+// on click function to search for other place types
 $('#map-search-div').on('click', '.search-button', function () {
   clearMarkers();
   searchLocation = new google.maps.LatLng(loc.lat, loc.lng);
@@ -111,14 +114,16 @@ function createMarker(place) {
     });
   })
   markers.push(marker);
+
   // closes infowindow when map clicked
   google.maps.event.addListener(map, 'click', function () {
     infowindow.close();
   });
 };
 
-function clearMarkers(){
-  markers.forEach(function(el){
+// function to clear markers
+function clearMarkers() {
+  markers.forEach(function (el) {
     el.setMap(null);
   })
 }

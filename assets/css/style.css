@@ -73,6 +73,11 @@ nav img {
   padding: 5px;
 }
 
+/* weather css */
+.weather-conditions {
+  font-size: 16pt;
+}
+
 /* sports css */
 #sports-news-table {
   table-layout: fixed;

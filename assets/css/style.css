@@ -1,0 +1,144 @@
+body {
+  background: linear-gradient(to top, #FF9A6E 22%, #ffffff 113%);
+}
+
+nav .nav-header {
+  background-color: #7FC3EB;
+  border-bottom: solid 5px #ee6e73; 
+}
+
+nav img {
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#submit {
+  margin: 0 auto;
+  align-content: center;
+  display: block;
+  color: #7FC3EB;
+  font-size: 20pt;
+}
+
+#search {
+  margin: 20px 0px;
+  border-bottom: solid 1px #ee6e73;
+  font-size: 20pt;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+.form-inline{
+  font-size: 12pt;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 24pt;
+  font-weight: 700px;
+}
+
+#map-div{
+  height:400px;
+}
+
+#weather-div{
+  height: auto;
+  font-size: 16pt;
+}
+
+#sports-div{
+  height:auto;
+  color: #7FC3EB;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 16pt;
+}
+
+.card-panel {
+  padding: 12px;
+  color:#7FC3EB;
+  text-align: center;
+}
+
+.card-title, .card-content {
+  color:#7FC3EB;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.content-card {
+  padding: 5px;
+}
+
+/* weather css */
+.weather-conditions {
+  font-size: 20pt;
+}
+
+.weather-card {
+  display: inline-block;
+  margin: 10px 15px;
+}
+
+.weather-condition-p {
+  margin: 0rem;
+}
+
+/* sports css */
+#sports-news-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#sports-news-col1 {
+  width: 100px;
+}
+
+#sports-news-col2 {
+  width: 80%;
+}
+
+#sports-news-col3  {
+  width: 10%;
+}
+
+.sports-news-image, .sports-news-headline, .sports-news-source {
+  max-width: 100%;
+  max-height: 50px;
+}
+
+.sports-news-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-width: 100px;
+  height: auto;
+  max-height:auto;
+}
+
+/* Maps CSS */
+.info-window-name {
+  font-weight: bold;
+  color: #FF9A6E;
+  font-size: 16px;
+}
+
+a.map-link {
+  color: #7FC3EB;
+  font-size: 13px;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.search-button {
+  margin: 4px;
+  text-align: center;
+  font-size: 20pt;
+}

@@ -1,6 +1,8 @@
 # Real-Project-1-Teach-Eich
 A web app to help you get around a new city and chat with locals. Get the weather forecast, local sports news, and Google Maps all if one place. Time to get Popp'in! https://hooliaah.github.io/Project-1-Team-Eich/
 
+*Note, this is the old working repo.
+
 # Team Members 
 Yen Chiu<br />
 Julie Groth<br />

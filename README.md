@@ -1,9 +1,5 @@
 # Real-Project-1-Teach-Eich
-<<<<<<< HEAD
-# Real-Project-1-Team-Eich
-# Project-1-Team-Eich
-=======
-https://hooliaah.github.io/Real-Project-1-Teach-Eich/
+A web app to help you get around a new city and chat with locals. Get the weather forecast, local sports news, and Google Maps all if one place. Time to get Popp'in! https://hooliaah.github.io/Project-1-Team-Eich/
 
 # Team Members 
 Yen Chiu<br />
@@ -32,5 +28,3 @@ Allow user to change dashboard layout.<br />
 Select what types of sports you are interested in.<br />
 Add additional APIs, such as Yelp and Flickr.<br />
 Update Google Map search results when map boundaries change.<br />
->>>>>>> d1940ad2b5d954383f5536efebb2ad15158ddb1b
-# Bamazon
